@@ -1,2 +1,2 @@
-# snake-game
-Classic snake game built with JavaScript, HTML &amp; CSS
+# Snake Game
+Classic snake game built with JavaScript, HTML & CSS
