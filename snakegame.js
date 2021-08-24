@@ -112,11 +112,25 @@ function drawFood() {
       snakeboard_ctx.strokeRect(food_x, food_y, 10, 10);
 }
 
+function gridLines() {
+      for (var x = 0.5; x < 600; x += 10) {
+        snakeboard_ctx.moveTo(x, 0);
+        snakeboard_ctx.lineTo(x, 600);
+      }
+      for (var y = 0.5; y < 600; y += 10) {
+        snakeboard_ctx.moveTo(0, y);
+        snakeboard_ctx.lineTo(600, y);
+      }
+      snakeboard_ctx.strokeStyle = "#ddd";
+      snakeboard_ctx.stroke();
+}
+
 function main() {
       if (hasGameEnded()) return;
       changing_Direction = false;
       setTimeout(function onTick() {
       clearCanvas();
+      gridLines();
       drawFood();
       moveSnake();
       drawSnake();
