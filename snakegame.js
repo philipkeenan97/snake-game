@@ -125,6 +125,8 @@ function gridLines() {
       snakeboard_ctx.stroke();
 }
 
+
+
 function main() {
       if (hasGameEnded()) return;
       changing_Direction = false;
@@ -134,10 +136,15 @@ function main() {
       drawFood();
       moveSnake();
       drawSnake();
-      main();},
+      main();
+      if (hasGameEnded() !== false) {
+            if (confirm("You died! \nScore: " + score + "\nWould you like to play again?")) {
+                  window.location.reload();
+            }}
+      },
       100);
 }
-
+alert("Ready to Play Snake? \nUse the Up, Down, Left & Right arrows to move! \nRemember: Don't hit the walls or yourself!");
 main();
 genFood();
 document.addEventListener("keydown", change_Direction);
