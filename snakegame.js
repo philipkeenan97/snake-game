@@ -144,7 +144,8 @@ function main() {
       },
       100);
 }
-alert("Ready to Play Snake? \nUse the Up, Down, Left & Right arrows to move! \nRemember: Don't hit the walls or yourself!");
-main();
-genFood();
-document.addEventListener("keydown", change_Direction);
+if(confirm("Ready to Play Snake? \nUse the Up, Down, Left & Right arrows to move! \nRemember: Don't hit the walls or yourself!")) {
+      main();
+      genFood();
+      document.addEventListener("keydown", change_Direction);
+}
